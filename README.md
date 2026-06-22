@@ -315,36 +315,6 @@ CMD ["streamlit", "run", "app.py", "--server.address=0.0.0.0"]
 
 ---
 
-## 💪 Resume Bullet Points
-
-### For Data Analyst Positions
-> "Built an **end-to-end NLP pipeline** processing **50,000+ product reviews** with **91% sentiment accuracy**, reducing manual analysis time by **95%** through automated topic modeling and aspect-based sentiment extraction"
-
-> "Developed **interactive Streamlit dashboards** with **Plotly visualizations**, enabling stakeholders to explore sentiment trends, identify emerging issues, and generate **executive-ready PDF reports** with one-click export"
-
-> "Implemented **Hugging Face Transformers** (DistilBERT) for sentiment classification and **BERTopic** for unsupervised topic extraction, achieving **92% precision** on aspect-based sentiment analysis across 6 key product dimensions"
-
-### For ML Engineer Positions
-> "Architected a **production-grade NLP system** leveraging **LangChain + Groq LLM** (Llama 3 70B) for natural language insights, processing **10,000+ reviews/minute** with automatic fallback mechanisms for high availability"
-
-> "Engineered **fault-tolerant ML pipelines** with graceful degradation (DistilBERT → TextBlob → rule-based), ensuring **99.9% uptime** while maintaining model performance across heterogeneous compute environments"
-
-> "Deployed containerized Streamlit applications to **Streamlit Cloud** with CI/CD integration, serving **500+ concurrent users** with sub-second response times for real-time sentiment and topic analysis"
-
-### For Data Scientist Positions
-> "Conducted **large-scale text analytics** on e-commerce review data, applying **transformer-based embeddings** and **HDBSCAN clustering** to identify 15+ distinct customer concern topics with **85% coherence score**"
-
-> "Designed **context-aware prompt engineering** for LLM-based insight generation, enabling product managers to query customer feedback in natural language and receive **data-backed recommendations** with cited evidence"
-
-> "Published internal research on **multi-aspect sentiment analysis**, correlating price/quality/delivery sentiment with overall ratings (R² = 0.78), adopted by product team for roadmap prioritization"
-
-### For Product Analyst Positions
-> "Created **AI-powered product intelligence tools** that automatically identified **$2M+ revenue-impacting issues** from customer reviews, reducing time-to-insight from 2 weeks to **<5 minutes**"
-
-> "Built **predictive sentiment dashboards** tracking 10+ product lines, enabling proactive response to negative trends and improving **NPS by 12 points** through data-driven product improvements"
-
-> "Developed **LLM-based executive summarization**, generating automated action item reports from unstructured feedback, adopted by C-suite for quarterly business reviews"
-
 ---
 
 ## 🏗 Architecture
