@@ -123,8 +123,8 @@ A **production-ready NLP application** that analyzes product reviews using state
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/yourusername/ai-review-analyzer.git
-cd ai-review-analyzer
+git clone https://github.com/shubham333k/-Sentix.git
+cd -Sentix
 
 # 2. Create virtual environment
 python -m venv venv
@@ -148,22 +148,18 @@ streamlit run app.py
 The app will open at `http://localhost:8501`
 
 ---
-
 ## 📁 Project Structure
 
 ```
-ai-review-analyzer/
+-Sentix/
 ├── app.py                      # Main Streamlit application (all 5 tabs)
 ├── utils.py                    # NLP utilities & helper functions
 ├── requirements.txt            # Python dependencies
 ├── .env.example                # Environment variables template
 ├── README.md                   # This documentation
-├── data/                       # Data directory
-│   └── amazon_reviews.csv      # Auto-downloaded sample dataset
 ├── .gitignore                  # Git ignore rules
 └── LICENSE                     # MIT License
 ```
-
 ---
 
 ## 💻 How to Run Locally
@@ -253,7 +249,7 @@ The app works **fully without Groq** - the "Ask Anything" tab will prompt you to
    git add .
    git commit -m "Initial commit"
    git branch -M main
-   git remote add origin https://github.com/yourusername/ai-review-analyzer.git
+   git remote add origin https://github.com/shubham333k/-Sentix.git
    git push -u origin main
    ```
 
@@ -428,7 +424,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For questions or feedback:
 - Create an issue on GitHub
-- Connect on [LinkedIn](https://linkedin.com/in/yourprofile)
+- Connect on [LinkedIn](https://www.linkedin.com/in/shubham-kumar-565040253/)
 - Email: shubhamjhanjhot333k@gmail.com
 
 ---
