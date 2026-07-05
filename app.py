@@ -15,6 +15,7 @@ import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+from csv_schema import prepare_uploaded_reviews
 
 # Set page configuration - MUST be first Streamlit command
 st.set_page_config(
@@ -241,12 +242,19 @@ def render_sidebar():
             uploaded_file = st.file_uploader(
                 "Upload reviews CSV",
                 type=["csv"],
-                help="CSV should have 'Text' and 'Score' columns (optional: 'Product', 'Time')"
+                help="CSV should have Text and Score columns. Xquik exports with Tweet Text are also supported."
             )
             if uploaded_file:
                 with st.spinner("📂 Loading uploaded data..."):
-                    df = pd.read_csv(uploaded_file)
-                st.success(f"✅ Loaded {len(df):,} reviews")
+                    uploaded_df = pd.read_csv(uploaded_file)
+                    try:
+                        df, upload_schema = prepare_uploaded_reviews(uploaded_df)
+                    except ValueError as error:
+                        st.error(str(error))
+                if df is not None:
+                    st.success(f"✅ Loaded {len(df):,} reviews")
+                    if upload_schema["used_default_score"]:
+                        st.info("No score column found. Using neutral score 3 for uploaded reviews.")
         else:
             if st.button("📥 Download Sample Data", use_container_width=True):
                 with st.spinner("⬇️ Downloading sample dataset..."):
@@ -979,11 +987,10 @@ def process_data(df: pd.DataFrame, progress_bar) -> pd.DataFrame:
     # Ensure required columns exist
     if 'Text' not in df.columns:
         # Try to find text column
-        text_cols = [c for c in df.columns if any(word in c.lower() for word in ['text', 'review', 'content', 'body'])]
-        if text_cols:
-            df['Text'] = df[text_cols[0]]
-        else:
-            st.error("No text column found. Expected column: 'Text', 'Review', 'Content', or 'Body'")
+        try:
+            df, _upload_schema = prepare_uploaded_reviews(df)
+        except ValueError:
+            st.error("No text column found. Expected Text, Review, Content, Body, or Tweet Text.")
             return df
     
     if 'Score' not in df.columns and 'Rating' in df.columns:
